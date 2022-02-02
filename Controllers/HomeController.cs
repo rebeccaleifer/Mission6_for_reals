@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿//Rebecca Leifer
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Mission6.Models;
 using System;
@@ -11,12 +12,12 @@ namespace Mission6.Controllers
 {
     public class HomeController : Controller
     {
-        private TaskContext tContext { get; set; }
+        // private TaskContext tContext { get; set; }
 
-        public HomeController(TaskContext someName)
-        {
-            tContext = someName;
-        }
+        //public HomeController(TaskContext someName)
+        //{
+        //    //tContext = someName;
+        //}
 
         public IActionResult Index()
         {
