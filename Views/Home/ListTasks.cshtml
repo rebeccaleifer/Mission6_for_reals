@@ -20,15 +20,15 @@
                     if (x.Quadrant == 1 && x.Completed == false)
                     {
                         <div style="display:flex; justify-content: space-between">
-                            <div class="name">@x.TaskName</div>
+                            <div class="name">@x.TaskDescription</div>
                             <div class="name">@x.DueDate</div>
                             <div class="name">@x.Category</div>
                             <div class="name">@x.Completed</div>
                             <div>
-                                <a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskID">Edit</a>
+                                <a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Edit</a>
                             </div>
                             <div>
-                                <a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskID">Delete</a>
+                                <a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a>
                             </div>
                         </div>
                     }
@@ -43,15 +43,15 @@
                     if (x.Quadrant == 2 && x.Completed == false)
                     {
                         <div style="display: flex; justify-content: space-between">
-                            <div class="name">@x.TaskName</div>
+                            <div class="name">@x.TaskDescription</div>
                             <div class="name">@x.DueDate</div>
                             <div class="name">@x.Category</div>
                             <div class="name">@x.Completed</div>
                             <div>
-                                <a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskID">Edit</a>
+                                <a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Edit</a>
                             </div>
                             <div>
-                                <a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskID">Delete</a>
+                                <a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a>
                             </div>                      
                         </div>
                     }
@@ -70,15 +70,15 @@
                     if (x.Quadrant == 3 && x.Completed == false)
                     {
                         <div style="display: flex; justify-content: space-between">
-                            <div class="name">@x.TaskName</div>
+                            <div class="name">@x.TaskDescription</div>
                             <div class="name">@x.DueDate</div>
                             <div class="name">@x.Category</div>
                             <div class="name">@x.Completed</div>
                             <div>
-                                <a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskID">Edit</a>
+                                <a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Edit</a>
                             </div>
                             <div>
-                                <a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskID">Delete</a>
+                                <a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a>
                             </div>                       
                         </div>
                     }
@@ -93,15 +93,15 @@
                     if (x.Quadrant == 4 && x.Completed == false)
                     {
                         <div style="display: flex; justify-content: space-between">
-                            <div class="name">@x.TaskName</div>
+                            <div class="name">@x.TaskDescription</div>
                             <div class="name">@x.DueDate</div>
                             <div class="name">@x.Category</div>
                             <div class="name">@x.Completed</div>
                             <div>
-                                <a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskID">Edit</a>
+                                <a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Edit</a>
                             </div>
                             <div>
-                                <a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskID">Delete</a>
+                                <a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a>
                             </div>
                         </div>
                     }
