@@ -13,11 +13,11 @@ namespace Mission6.Controllers
 {
     public class HomeController : Controller
     {
-        private TaskContext tContext { get; set; }
+        private TaskContext daContext { get; set; }
 
         public HomeController(TaskContext someName)
         {
-            tContext = someName;
+            daContext = someName;
         }
 
         public IActionResult Index()
@@ -33,7 +33,7 @@ namespace Mission6.Controllers
         [HttpGet]
         public IActionResult EnterTasks()
         {
-            ViewBag.Categories = tContext.Categories.ToList();
+            ViewBag.Categories = daContext.Categories.ToList();
 
             return View();
         }
@@ -43,14 +43,14 @@ namespace Mission6.Controllers
         {
             if (ModelState.IsValid)
             {
-                tContext.Add(tr);
-                tContext.SaveChanges();
+                daContext.Add(tr);
+                daContext.SaveChanges();
 
                 return View("Confirmation", tr);
             }
             else //If Invalid
             {
-                ViewBag.Categories = tContext.Categories.ToList();
+                ViewBag.Categories = daContext.Categories.ToList();
 
                 return View();
             }
@@ -58,7 +58,7 @@ namespace Mission6.Controllers
 
         public IActionResult ListTasks()
         {
-            var tasks = tContext.Responses
+            var tasks = daContext.Responses
                 .Include(x => x.Category)
                 .ToList();
 
@@ -68,16 +68,16 @@ namespace Mission6.Controllers
         [HttpGet]
         public IActionResult Edit(int taskid)
         {
-            ViewBag.Categories = tContext.Categories.ToList();
-            var task = tContext.Responses.Single(x => x.TaskId == taskid);
+            ViewBag.Categories = daContext.Categories.ToList();
+            var task = daContext.Responses.Single(x => x.TaskId == taskid);
             return View("EnterTasks", task);
         }
 
         [HttpPost]
         public IActionResult Edit(TaskResponse t)
         {
-            tContext.Update(t);
-            tContext.SaveChanges();
+            daContext.Update(t);
+            daContext.SaveChanges();
 
             return RedirectToAction("ListTasks");
         }
@@ -85,15 +85,15 @@ namespace Mission6.Controllers
         [HttpGet]
         public IActionResult Delete(int taskid)
         {
-            var task = tContext.Responses.Single(x => x.TaskId == taskid);
+            var task = daContext.Responses.Single(x => x.TaskId == taskid);
             return View(task);
         }
 
         [HttpPost]
         public IActionResult Delete(TaskResponse tr)
         {
-            tContext.Responses.Remove(tr);
-            tContext.SaveChanges();
+            daContext.Responses.Remove(tr);
+            daContext.SaveChanges();
 
             return RedirectToAction("ListTasks");
         }

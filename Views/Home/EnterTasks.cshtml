@@ -10,24 +10,36 @@
 <div>
     <form method="post">
 
-        @*<div asp-validation-summary="All"></div>
+        <div asp-validation-summary="All"></div>
 
-        <label asp-for="Task">Task</label><br />
-        <input asp-for="Task" required /><br /><br />
+        <label asp-for="TaskDescription">Task</label><br />
+        <input asp-for="TaskDescription" required /><br /><br />
 
         <label asp-for="DueDate">Due Date</label><br />
         <input asp-for="DueDate" /><br /><br />
 
         <label asp-for="Quadrant">Quadrant</label><br />
-        <input asp-for="Quadrant" required /><br /><br />
+        <select asp-for="Quadrant" required>
+            <option value=1>I</option>
+            <option value=2>II</option>
+            <option value=3>III</option>
+            <option value=4>IV</option>
+        </select><br />
 
-        <label asp-for="Category">Category</label><br />
-        <input asp-for="Category" /><br /><br />
+        <label asp-for="CategoryId">Category:</label>
+        <select asp-for="CategoryId">
+            <option value="">Select a Category</option>
+            @foreach (Category c in ViewBag.Categories)
+            {
+                <option value="@c.CategoryId">@c.CategoryName</option>
+            }
+        </select>
+        <br />
 
         <label asp-for="Completed">Completed</label><br />
         <input asp-for="Completed" /><br /><br />
 
-        <button type="submit">Submit</button>*@
+        <button type="submit">Submit</button>
 
     </form>
 </div>

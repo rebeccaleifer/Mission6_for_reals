@@ -15,7 +15,7 @@ namespace Mission6.Models
         [Required(ErrorMessage = "Task Description is required")]
         public string TaskDescription { get; set; }
 
-        public DateTime DueDate { get; set; }
+        public string DueDate { get; set; }
 
         [Required(ErrorMessage = "Quadrant is required")]
         public int Quadrant { get; set; }

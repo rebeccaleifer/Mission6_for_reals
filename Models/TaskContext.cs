@@ -33,7 +33,7 @@ namespace Mission6.Models
                     TaskId = 1,
                     CategoryId = 4,
                     TaskDescription = "Wash the car.",
-                    DueDate = new DateTime(2008, 3, 1),
+                    DueDate = "3/1/2008",
                     Quadrant = 1,
                     Completed = true
                 }, 
@@ -42,7 +42,7 @@ namespace Mission6.Models
                     TaskId = 2,
                     CategoryId = 1,
                     TaskDescription = "Sleep.",
-                    DueDate = new DateTime(2018, 1, 3),
+                    DueDate = "1/3/2018",
                     Quadrant = 4,
                     Completed = true
                 },
@@ -51,7 +51,7 @@ namespace Mission6.Models
                     TaskId = 3,
                     CategoryId = 3,
                     TaskDescription = "Ask out Kate.",
-                    DueDate = new DateTime(2022, 3, 1),
+                    DueDate = "3/1/2022",
                     Quadrant = 3,
                     Completed = false
                 }
