@@ -47,13 +47,15 @@ namespace Mission6.Controllers
         }
 
         //[HttpGet]
-        //public IActionResult Edit()
+        //public IActionResult Edit(int taskid)
         //{
-        //    return View("ListTasks");
+              ViewBag.Categories = t.Context.Categories.ToList();
+              var task = tContext.Responses.Single(x => x.TaskID == taskid);
+        //    return View("EnterTasks");
         //}
 
         //[HttpPost]
-        //public IActionResult Edit()
+        //public IActionResult Edit(TaskResponse t)
         //{
         //    tContext.Update(blah);
         //    tContext.SaveChanges();
@@ -62,16 +64,16 @@ namespace Mission6.Controllers
         //}
 
         //[HttpGet]
-        //public IActionResult Delete()
+        //public IActionResult Delete(int taskid)
         //{
-
-        //    return View("EnterTasks");
+              var task = tContext.Responses.Single(x => x.TaskID == taskid );
+        //    return View("ListTasks");
         //}
 
         //[HttpPost]
-        //public IActionResult Delete()
+        //public IActionResult Delete(TaskResponse tr)
         //{
-        //    tContext.Responses.Remove();
+        //    tContext.Responses.Remove(tr);
         //    tContext.SaveChanges();
 
         //    return RedirectToAction("ListTasks");
