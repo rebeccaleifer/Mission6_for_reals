@@ -4,128 +4,12 @@
 
 @model List<TaskResponse>
 
-@*<br />
-<br />
-<br />
-<br />
-<br />
-<div class="matrix">
-    <div class="row zero">
-        <div class="col-2 first"></div>
-        <div class="col-5 first">URGENT</div>
-        <div class="col-5 second">NOT URGENT</div>
-    </div>
-    <div class="row upper">
-        <div class="col-2 first">IMPORTANT</div>
-        <div class="col-5 q">
-            Quadrant 1
-            <div class="quad">
-
-                @foreach (var x in Model)
-                {
-                    if (x.Quadrant == 1 && x.Completed == false)
-                    {
-                        <div style="display:flex; justify-content: space-between">
-                            <div class="name">@x.TaskDescription</div>
-                            <div class="name">@x.DueDate</div>
-                            <div class="name">@x.Category.CategoryName</div>
-                            <div class="name">@x.Completed</div>
-                            <div>
-                                <a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Edit</a>
-                            </div>
-                            <div>
-                                <a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a>
-                            </div>
-                        </div>
-                    }
-                }
-            </div>
-        </div>
-        <div class="col-5 q">
-            Quadrant 2
-            <div class="quad">
-                @foreach (var x in Model)
-                {
-                    if (x.Quadrant == 2 && x.Completed == false)
-                    {
-                        <div style="display: flex; justify-content: space-between">
-                            <div class="name">@x.TaskDescription</div>
-                            <div class="name">@x.DueDate</div>
-                            <div class="name">@x.Category.CategoryName</div>
-                            <div class="name">@x.Completed</div>
-                            <div>
-                                <a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Edit</a>
-                            </div>
-                            <div>
-                                <a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a>
-                            </div>
-                        </div>
-                    }
-                }
-            </div>
-        </div>
-    </div>
-    <br />
-    <br />
-    <br />
-    <div class="row">
-        <div class="col-2 first">NOT IMPORTANT</div>
-        <div class="col-5 q">
-            Quadrant 3
-            <div class="quad">
-                @foreach (var x in Model)
-                {
-                    if (x.Quadrant == 3 && x.Completed == false)
-                    {
-                        <div style="display: flex; justify-content: space-between">
-                            <div class="name">@x.TaskDescription</div>
-                            <div class="name">@x.DueDate</div>
-                            <div class="name">@x.Category.CategoryName</div>
-                            <div class="name">@x.Completed</div>
-                            <div>
-                                <a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Edit</a>
-                            </div>
-                            <div>
-                                <a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a>
-                            </div>
-                        </div>
-                    }
-                }
-            </div>
-        </div>
-        <div class="col-5 q">
-            Quadrant 4
-            <div class="quad">
-                @foreach (var x in Model)
-                {
-                    if (x.Quadrant == 4 && x.Completed == false)
-                    {
-                        <div style="display: flex; justify-content: space-between">
-                            <div class="name">@x.TaskDescription</div>
-                            <div class="name">@x.DueDate</div>
-                            <div class="name">@x.Category.CategoryName</div>
-                            <div class="name">@x.Completed</div>
-                            <div>
-                                <a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Edit</a>
-                            </div>
-                            <div>
-                                <a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a>
-                            </div>
-                        </div>
-                    }
-                }
-            </div>
-        </div>
-    </div>
-</div>*@
-
-
 <div class="container">
     <h1>Task List</h1>
-    <p>Stay on task by keeping track of each task and which quadrant it is in.</p>
-    <div class="row">
-        <div class="col-sm-6" style="background-color: #EEEEEE;">
-            Quadrant 1<br>
+    <h3 style="text-align: center;">Stay focused by keeping track of each task and its associated quadrant.</h3><br />
+    <div class="row" style="opacity:0.94">
+        <div class="col-sm-6" style="background-color: #DCE6F1; border-color: #183045; border-style: solid; border-left-width: 6px; border-top-width: 6px;">
+            <h2>Quadrant I</h2><br>
             @foreach (var x in Model)
             {
                 if (x.Quadrant == 1 && x.Completed == false)
@@ -143,8 +27,8 @@
                 }
             }
         </div>
-        <div class="col-sm-6" style="background-color: #FAEACB;">
-            Quadrant 2<br />
+        <div class="col-sm-6" style="background-color: #B4CFEA; border-color: #183045; border-style: solid; border-top-width: 6px; border-right-width: 6px;">
+            <h2>Quadrant II</h2><br />
             @foreach (var x in Model)
             {
                 if (x.Quadrant == 2 && x.Completed == false)
@@ -165,9 +49,9 @@
     </div>
 </div>
 <div class="container">
-    <div class="row">
-        <div class="col-sm-6" style="background-color: #F7DBD7;">
-            Quadrant 3<br>
+    <div class="row" style="opacity:0.94;">
+        <div class="col-sm-6" style="background-color: #B4CFEA; border-color: #183045; border-style: solid; border-left-width: 6px; border-bottom-width: 6px;">
+            <h2>Quadrant III</h2><br>
             @foreach (var x in Model)
             {
                 if (x.Quadrant == 3 && x.Completed == false)
@@ -185,8 +69,8 @@
                 }
             }
         </div>
-        <div class="col-sm-6" style="background-color: #C1977F;">
-            Quadrant 4<br>
+        <div class="col-sm-6" style="background-color: #DCE6F1; border-color: #183045; border-style: solid; border-bottom-width: 6px; border-right-width: 6px;">
+            <h2>Quadrant IV</h2><br>
             @foreach (var x in Model)
             {
                 if (x.Quadrant == 4 && x.Completed == false)
